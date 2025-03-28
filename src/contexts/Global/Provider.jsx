@@ -8,7 +8,6 @@ function Provider({ children }) {
 	const [user, setUser] = useState(null);
 	const [cart, setCart] = useState([]);
 	const uid = sessionStorage.getItem('uid') || localStorage.getItem('uid');
-	console.log(cart);
 
 	useEffect(() => {
 		const fetching = async () => {
@@ -45,14 +44,29 @@ function Provider({ children }) {
 	};
 
 	const deleteFromCart = async (productId) => {
+		if (!uid) {
+			alert('You must be logged in to remove items from the cart.');
+			return;
+		}
+
 		try {
-			const updatedCart = cart.filter((item) => item.productId !== productId);
-			setCart(updatedCart);
+			const updatedCart = (cart || []).filter(
+				(item) => String(item.productId) !== String(productId)
+			);
 			await api.patch(`/carts/${uid}`, { items: updatedCart });
-			notify('Product removed from cart!', 'success');
+			setCart(updatedCart);
+			if (updatedCart.length === 0) {
+				notify('Your cart is now empty.', 'info');
+			} else {
+				notify('Product removed from cart!', 'success');
+			}
 		} catch (error) {
+			if (error.response && error.response.status === 404) {
+				alert('Cart not found. Please refresh the page.');
+			} else {
+				alert('Failed to remove product from cart. Please try again.');
+			}
 			console.error('Error removing product from cart:', error);
-			alert('Failed to remove product from cart. Please try again.');
 		}
 	};
 

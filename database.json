@@ -211,12 +211,7 @@
   "carts": [
     {
       "id": "e891",
-      "items": [
-        {
-          "productId": "1",
-          "quantity": 4
-        }
-      ]
+      "items": []
     }
   ]
 }

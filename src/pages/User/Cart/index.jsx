@@ -71,12 +71,14 @@ function Cart() {
 													variant='primary'
 													as={Link}
 													to={`/shopping/${product.id}`}
-													onClick={handleDeleteFromCart}
-													value={product.id}
 												>
 													<i className='bi bi-info-square' />
 												</Button>
-												<Button variant='danger'>
+												<Button
+													variant='danger'
+													value={product.id}
+													onClick={handleDeleteFromCart}
+												>
 													<i className='bi bi-trash' />
 												</Button>
 											</td>
