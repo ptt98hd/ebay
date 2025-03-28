@@ -1,0 +1,222 @@
+{
+  "users": [
+    {
+      "id": "e891",
+      "firstname": "John",
+      "lastname": "Doe",
+      "phone": "0123456789",
+      "email": "john.doe@email.com",
+      "password": "P@ssW0rd"
+    }
+  ],
+  "sellers": [
+    {
+      "id": "s001",
+      "name": "CellPhoneS",
+      "description": "Description",
+      "phone": "0123456789",
+      "address": "123 Main Street, Tech City",
+      "email": "contact@bestelectronics.com",
+      "password": "P@ssW0rd"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics",
+      "img": "https://i.ebayimg.com/images/g/ksAAAOSww7Ncyzsf/s-l225.png"
+    },
+    {
+      "id": "2",
+      "name": "Fashion",
+      "img": "https://i.ebayimg.com/images/g/ptAAAOSwhWpc~--F/s-l225.png"
+    },
+    {
+      "id": "3",
+      "name": "Home & Garden",
+      "img": "https://i.ebayimg.com/images/g/8DQAAOSwvCZc3Ixq/s-l225.png"
+    },
+    {
+      "id": "4",
+      "name": "Sports & Outdoors",
+      "img": "https://i.ebayimg.com/images/g/7SAAAOSwBQhc3IzN/s-l225.png"
+    },
+    {
+      "id": "5",
+      "name": "Toys & Hobbies",
+      "img": "https://i.ebayimg.com/images/g/qCkAAOSw8kFcyzxb/s-l225.png"
+    },
+    {
+      "id": "6",
+      "name": "Health & Beauty",
+      "img": "https://i.ebayimg.com/images/g/8MYAAOSwZ79cyzuw/s-l225.png"
+    }
+  ],
+  "banners": [
+    {
+      "id": "1",
+      "title": "Get your order or your money back",
+      "description": "Shop confidently with eBay Money Back Guarantee.",
+      "action": "Learn more",
+      "href": "/helps",
+      "img": "https://i.ebayimg.com/images/g/-9kAAOSwtWpnuFw3/s-l1600.webp"
+    },
+    {
+      "id": "2",
+      "title": "Returns made simple",
+      "description": "Not happy with your purchase? It's easy to start a return.",
+      "action": "Learn more",
+      "href": "/helps",
+      "img": "https://i.ebayimg.com/images/g/ricAAOSwn3dnyHtZ/s-l1600.webp"
+    },
+    {
+      "id": "3",
+      "title": "Get help exactly when you need it",
+      "description": "From shipping to returns, find answers to all of your questions.",
+      "action": "Start here",
+      "href": "/helps",
+      "img": "https://i.ebayimg.com/images/g/fPgAAOSwe6xnywMp/s-l1600.webp"
+    }
+  ],
+  "brands": [
+    {
+      "id": "1",
+      "name": "Samsung"
+    },
+    {
+      "id": "2",
+      "name": "Apple"
+    },
+    {
+      "id": "3",
+      "name": "Sony"
+    },
+    {
+      "id": "4",
+      "name": "Nike"
+    },
+    {
+      "id": "5",
+      "name": "Adidas"
+    },
+    {
+      "id": "6",
+      "name": "Puma"
+    },
+    {
+      "id": "7",
+      "name": "IKEA"
+    },
+    {
+      "id": "8",
+      "name": "Philips"
+    },
+    {
+      "id": "9",
+      "name": "Dyson"
+    },
+    {
+      "id": "10",
+      "name": "Wilson"
+    },
+    {
+      "id": "11",
+      "name": "Under Armour"
+    },
+    {
+      "id": "12",
+      "name": "Decathlon"
+    },
+    {
+      "id": "13",
+      "name": "LEGO"
+    },
+    {
+      "id": "14",
+      "name": "Hasbro"
+    },
+    {
+      "id": "15",
+      "name": "Mattel"
+    },
+    {
+      "id": "16",
+      "name": "L'Oréal"
+    },
+    {
+      "id": "17",
+      "name": "Estée Lauder"
+    },
+    {
+      "id": "18",
+      "name": "Neutrogena"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "sellerId": "s001",
+      "categoryId": 1,
+      "brandId": 1,
+      "name": "Samsung Galaxy S21",
+      "price": 799.99,
+      "img": "https://i.ebayimg.com/images/g/ksAAAOSww7Ncyzsf/s-l225.png"
+    },
+    {
+      "id": "2",
+      "sellerId": "s001",
+      "categoryId": 2,
+      "brandId": 4,
+      "name": "Nike Air Max 270",
+      "price": 150,
+      "img": "https://i.ebayimg.com/images/g/ptAAAOSwhWpc~--F/s-l225.png"
+    },
+    {
+      "id": "3",
+      "sellerId": "s001",
+      "categoryId": 3,
+      "brandId": 7,
+      "name": "IKEA Dining Table",
+      "price": 299.99,
+      "img": "https://i.ebayimg.com/images/g/8DQAAOSwvCZc3Ixq/s-l225.png"
+    },
+    {
+      "id": "4",
+      "sellerId": "s001",
+      "categoryId": 4,
+      "brandId": 10,
+      "name": "Wilson Tennis Racket",
+      "price": 120,
+      "img": "https://i.ebayimg.com/images/g/7SAAAOSwBQhc3IzN/s-l225.png"
+    },
+    {
+      "id": "5",
+      "sellerId": "s001",
+      "categoryId": 5,
+      "brandId": 13,
+      "name": "LEGO Star Wars Set",
+      "price": 89.99,
+      "img": "https://i.ebayimg.com/images/g/qCkAAOSw8kFcyzxb/s-l225.png"
+    },
+    {
+      "id": "6",
+      "sellerId": "s001",
+      "categoryId": 6,
+      "brandId": 16,
+      "name": "L'Oréal Revitalift Cream",
+      "price": 25,
+      "img": "https://i.ebayimg.com/images/g/8MYAAOSwZ79cyzuw/s-l225.png"
+    }
+  ],
+  "carts": [
+    {
+      "id": "e891",
+      "items": [
+        {
+          "productId": "1",
+          "quantity": 4
+        }
+      ]
+    }
+  ]
+}
