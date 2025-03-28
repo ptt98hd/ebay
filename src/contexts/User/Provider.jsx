@@ -6,7 +6,9 @@ function Provider({ children }) {
 	const [categories, setCategories] = useState([]);
 	const [brands, setBrands] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState('');
+	const [selectedBrand, setSelectedBrand] = useState('');
 	const [searchQuery, setSearchQuery] = useState('');
+	const [maxPrice, setMaxPrice] = useState(5000);
 
 	useEffect(() => {
 		const fetchCategories = async () => {
@@ -24,8 +26,12 @@ function Provider({ children }) {
 	const value = {
 		categories,
 		setCategories,
+		selectedBrand,
+		setSelectedBrand,
 		brands,
 		setBrands,
+		maxPrice,
+		setMaxPrice,
 		selectedCategory,
 		setSelectedCategory,
 		searchQuery,

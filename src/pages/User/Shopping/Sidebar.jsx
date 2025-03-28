@@ -4,7 +4,14 @@ import Contexts from '../../../contexts';
 import { useLocation } from 'react-router-dom';
 
 function Sidebar() {
-	const { categories, brands } = useContext(Contexts.User.Context);
+	const {
+		categories,
+		brands,
+		setSelectedCategory,
+		setSelectedBrand,
+		maxPrice,
+		setMaxPrice,
+	} = useContext(Contexts.User.Context);
 	const location = useLocation();
 	const queryParams = new URLSearchParams(location.search);
 	const categoryId = queryParams.get('category');
@@ -18,8 +25,12 @@ function Sidebar() {
 			<Card.Body>
 				<Form.Group className='mb-3'>
 					<Form.Label>Category</Form.Label>
-					<Form.Select>
-						<option value='0' selected={0 == categoryId}>
+					<Form.Select
+						onChange={(event) => {
+							setSelectedCategory(event.target.value);
+						}}
+					>
+						<option value='' selected={0 == categoryId}>
 							All Category
 						</option>
 						{categories.map((category, index) => (
@@ -36,7 +47,11 @@ function Sidebar() {
 				{/* Brands */}
 				<Form.Group className='mb-3'>
 					<Form.Label>Brand</Form.Label>
-					<Form.Select>
+					<Form.Select
+						onChange={(event) => {
+							setSelectedBrand(event.target.value);
+						}}
+					>
 						<option value={''}>All Brands</option>
 						{brands.map((brand) => {
 							return (
@@ -48,14 +63,16 @@ function Sidebar() {
 					</Form.Select>
 				</Form.Group>
 				<Form.Group className='mb-3'>
-					<Form.Label>Price</Form.Label>
-					<Form.Range />
-				</Form.Group>
-				<Form.Group className='mb-3'>
-					<Form.Check type='checkbox' label='In Stock' />
-				</Form.Group>
-				<Form.Group className='mb-3'>
-					<Form.Check type='checkbox' label='On Sale' />
+					<Form.Label>Price: {maxPrice}</Form.Label>
+					<Form.Range
+						min={0}
+						max={5000}
+						value={maxPrice}
+						step={50}
+						onChange={(event) => {
+							setMaxPrice(event.target.value);
+						}}
+					/>
 				</Form.Group>
 			</Card.Body>
 		</Card>

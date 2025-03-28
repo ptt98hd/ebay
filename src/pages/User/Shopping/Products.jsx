@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import Contexts from '../../../contexts';
 
 function Products() {
-	const { categories, selectedCategory, searchQuery } = useContext(
-		Contexts.User.Context
-	);
+	const { categories, selectedCategory, selectedBrand, searchQuery, maxPrice } =
+		useContext(Contexts.User.Context);
 	const [products, setProducts] = useState([]);
 	const [brands, setBrands] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -34,6 +33,14 @@ function Products() {
 						(product) => product.categoryId == selectedCategory
 					);
 				}
+				if (selectedBrand) {
+					filtered = filtered.filter(
+						(product) => product.brandId == selectedBrand
+					);
+				}
+				if (maxPrice) {
+					filtered = filtered.filter((product) => product.price <= maxPrice);
+				}
 				if (searchQuery) {
 					filtered = filtered.filter((product) =>
 						product.name.includes(searchQuery)
@@ -47,7 +54,7 @@ function Products() {
 		} finally {
 			setLoading(false);
 		}
-	}, [selectedCategory, searchQuery, categories]);
+	}, [selectedCategory, searchQuery, categories, selectedBrand, maxPrice]);
 
 	if (loading) {
 		return (
